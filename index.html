@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Project</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="body">
+  <div class="first-block">
+    <h1 class="task__title">Tasks</h1>
+    <button class="open-button open-button__disabled" disabled>Открыть</button>
+    <div class="task-list"></div>
+  </div>
+  <div class="modal">
+    <p class="modal-text"></p>
+    <button class="modal-button">Проверить</button>
+    <input type="text" class="enter-space" placeholder="Ввод">
+    <p class="result"></p>
+  </div>
+  <template class="task-template">
+    <label for="task" class="form__label">
+      <input type="radio" name="task" class="form__check">
+      <span class="form__task-text"></span>
+    </label>
+  </template>
+  <script type='module' src="./scripts/script.js"></script>
+</body>
+</html>
