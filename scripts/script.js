@@ -20,7 +20,7 @@ const result = document.querySelector('.result');
 const enterSpace = document.querySelector('.enter-space');
 
 const createTask = (task) => { 
-    const newTask = new Task('.task-template', task, '.form__check', openButton);
+    const newTask = new Task('.task-template', task, '.form__check', openButton, '.modal-text');
     return newTask.createTask(); 
 }; 
  
@@ -28,8 +28,8 @@ tasks.forEach((task) => {
     taskList.append(createTask(task));
 }); 
  
-openButton.onclick = (task) => { 
-    const modalOpen = new Modal('.modal', '.form__check', '.modal-text', task);
+openButton.onclick = () => { 
+    const modalOpen = new Modal('.modal');
     return modalOpen.openModalWindow();
 };
 

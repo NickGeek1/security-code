@@ -1,10 +1,12 @@
 class Task {
-    constructor(taskTemplateSelector, data, radioButton, openButton) {
+    constructor(taskTemplateSelector, data, radioButton, openButton, modalTextArea) {
         this._taskTemplateSelector = taskTemplateSelector;
         this._shortName = data.shortName;
         this._id = data.id;
         this._radioButton = radioButton;
         this._openButton = openButton;
+        this._modalTextArea= modalTextArea;
+        this._description = data.description;
     };
     //Частный метод, возвращающий шаблон задачи 
     _getTemplate() {
@@ -24,6 +26,8 @@ class Task {
             this._openButton.disabled = false;
             this._openButton.classList.remove('open-button__disabled');
             currentRadio.id = this._id;
+            this._modalTextArea = document.querySelector(this._modalTextArea);
+            this._modalTextArea.textContent = this._description;
         });
     };
     //Публичный метод, возвращающий готовый элемент
